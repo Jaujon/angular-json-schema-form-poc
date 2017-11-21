@@ -1,0 +1,92 @@
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$airbus-blue-selected: #23a5f3;
+$airbus-blue-dark: #001a5c;
+$airbus-blue-grey: #4d5f8d;
+// generated from http://mcg.mbitson.com
+
+$airbus-blue: (
+  50 : #e0e4eb,
+  100 : #b3bace,
+  200 : #808dae,
+  300 : $airbus-blue-grey,
+  400 : #263c74,
+  500 : $airbus-blue-dark,
+  600 : #001754,
+  700 : #00134a,
+  800 : #000f41,
+  900 : $airbus-blue-selected,
+  A100 : #6972ff,
+  A200 : #3642ff,
+  A400 : #0312ff,
+  A700 : #000ee8,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$airbus-blue-light: (
+  50 : #e5f4fe,
+  100 : #bde4fb,
+  200 : #91d2f9,
+  300 : #65c0f7,
+  400 : #44b3f5,
+  500 : $airbus-blue-selected,
+  600 : #1f9df1,
+  700 : #1a93ef,
+  800 : #158aed,
+  900 : #0c79ea,
+  A100 : #ffffff,
+  A200 : #e1efff,
+  A400 : #aed3ff,
+  A700 : #95c4ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$idp-app-primary: mat-palette($airbus-blue);
+$idp-app-accent: mat-palette($airbus-blue-light);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$idp-app-theme: mat-light-theme($idp-app-primary, $idp-app-accent);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($idp-app-theme);

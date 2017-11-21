@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "title": "Identity",
+  "description": "Your personal informations",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name",
+      "minLength": 2,
+      "required": true
+    },
+    "age": {
+      "type": "integer",
+      "description": "Age",
+      "minimum": 18,
+      "maximum": 99
+    },
+    "gender": {
+      "type": "string",
+      "widget": "select",
+      "description": "Gender",
+      "oneOf": [
+        {
+          "enum": [
+            "male"
+          ],
+          "description": "Male"
+        },
+        {
+          "enum": [
+            "female"
+          ],
+          "description": "Female"
+        }
+      ]
+    },
+    "pets": {
+      "type": "object",
+      "title": "Birth",
+      "properties": {
+        "birth_place": {
+          "type": "string",
+          "description": "Place"
+        },
+        "birth_date": {
+          "type": "string",
+          "widget": "date",
+          "description": "Birth date"
+        }
+      }
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

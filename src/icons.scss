@@ -1,0 +1,111 @@
+/*
+File's name             : icons.less
+Last update             : 2017/05/31 17:15
+Author                  : Romuald Bernard
+*/
+
+$font-path:     'assets/fonts';
+
+@font-face {
+  font-family: 'icomoon';
+  src: url($font-path + '/icomoon.eot?3a6t7b');
+  src: url($font-path + '/icomoon.eot?3a6t7b#iefix') format('embedded-opentype'),
+  url($font-path + '/icomoon.ttf?3a6t7b') format('truetype'),
+  url($font-path + '/icomoon.woff?3a6t7b') format('woff'),
+  url($font-path + '/icomoon.svg?3a6t7b#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-order:before {
+  content: "\e900";
+}
+.icon-3d:before {
+  content: "\e901";
+}
+.icon-angle:before {
+  content: "\e902";
+}
+.icon-carto:before {
+  content: "\e903";
+}
+.icon-circle:before {
+  content: "\e904";
+}
+.icon-ellipse:before {
+  content: "\e905";
+}
+.icon-folder:before {
+  content: "\e906";
+}
+.icon-line:before {
+  content: "\e907";
+}
+.icon-map:before {
+  content: "\e908";
+}
+.icon-maximize:before {
+  content: "\e909";
+}
+.icon-mini_globe:before {
+  content: "\e90a";
+}
+.icon-minimize:before {
+  content: "\e90b";
+}
+.icon-multi_1-1:before {
+  content: "\e90c";
+}
+.icon-multi_double:before {
+  content: "\e90d";
+}
+.icon-multi_window:before {
+  content: "\e90e";
+}
+.icon-pige:before {
+  content: "\e90f";
+}
+.icon-point:before {
+  content: "\e910";
+}
+.icon-point_coord:before {
+  content: "\e911";
+}
+.icon-pointer:before {
+  content: "\e912";
+}
+.icon-report:before {
+  content: "\e913";
+}
+.icon-ruler:before {
+  content: "\e914";
+}
+.icon-simple_1:before {
+  content: "\e915";
+}
+.icon-square:before {
+  content: "\e916";
+}
+.icon-tools:before {
+  content: "\e917";
+}
+.icon-vector:before {
+  content: "\e918";
+}
+.icon-zone:before {
+  content: "\e919";
+}

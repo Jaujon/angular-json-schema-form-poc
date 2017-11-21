@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
+import { Http } from '@angular/http';
+
+import { QuestionService } from './question.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  providers: [QuestionService],
 })
 export class AppComponent {
-  title = 'app';
+  questions: any[];
+  http: Http;
+
+  constructor(service: QuestionService, http: Http) {
+    http.get('/assets/mock-data/editorschema.json').subscribe(res => (this.questions = service.fromSchema(res.json())));
+  }
 }
