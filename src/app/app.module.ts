@@ -1,43 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import {
-  MatInputModule,
-  MatNativeDateModule,
-  MatDatepickerModule,
-  MatSelectModule,
-  MatFormFieldModule,
-  MatExpansionModule,
-  MatButtonModule,
-} from '@angular/material';
+import { NgModule } from '@angular/core';
 
+import { DynamicFormModule} from './dynamic-form/dynamic-form.module';
 import { AppComponent } from './app.component';
-import { DynamicFormComponent } from './dynamic-form.component';
-import { DynamicFormQuestionComponent } from './dynamic-form-question.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule,
-
-    /* Material */
-    MatButtonModule,
-    MatInputModule,
-    MatNativeDateModule,
-    MatDatepickerModule,
-    MatSelectModule,
-    MatFormFieldModule,
-    MatExpansionModule,
+    DynamicFormModule,
   ],
-  declarations: [AppComponent, DynamicFormComponent, DynamicFormQuestionComponent],
+  declarations: [AppComponent],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

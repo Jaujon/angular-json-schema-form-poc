@@ -16,7 +16,7 @@ export class QuestionService {
       const def = properties[key];
       switch (true) {
         case 'object' === def.type:
-          questions.push(new QuestionGroup({ key: key, label: def.title }, this.iterateOverProperties(def.properties)));
+          questions.push(new QuestionGroup({ key, label: def.title }, this.iterateOverProperties(def.properties)));
           break;
         case 'string' === def.type && def.hasOwnProperty('oneOf'):
           questions.push(
@@ -29,7 +29,7 @@ export class QuestionService {
           break;
         case 'string' === def.type && !def.hasOwnProperty('oneOf'):
           questions.push(
-            new TextboxQuestion({ key: key, label: def.description, type: 'text', required: !!def.required })
+            new TextboxQuestion({ key: key, label: def.description, type: def.format || 'text', required: !!def.required })
           );
           break;
         case 'integer' === def.type:

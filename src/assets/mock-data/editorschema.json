@@ -34,7 +34,7 @@
         }
       ]
     },
-    "pets": {
+    "birth": {
       "type": "object",
       "title": "Birth",
       "properties": {
@@ -44,7 +44,7 @@
         },
         "birth_date": {
           "type": "string",
-          "widget": "date",
+          "format": "date-time",
           "description": "Birth date"
         }
       }

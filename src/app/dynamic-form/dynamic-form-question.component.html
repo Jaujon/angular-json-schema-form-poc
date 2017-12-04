@@ -1,0 +1,49 @@
+<div [formGroup]="form">
+  <ng-container [ngSwitch]="question.controlType">
+
+    <ng-container *ngSwitchCase="'textbox'">
+      <ng-container [ngSwitch]="question.type">
+        <mat-form-field *ngSwitchCase="'text'">
+          <input matInput
+                 [placeholder]="question.label"
+                 [type]="question.type"
+                 [formControl]="form.get(question.key)">
+          <mat-error *ngIf="form.get(question.key).errors && form.get(question.key).errors.required">Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field *ngSwitchCase="'date-time'">
+          <input matInput
+                 [matDatepicker]="picker"
+                 [placeholder]="question.label"
+                 [formControl]="form.get(question.key)">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </ng-container>
+    </ng-container>
+
+
+    <mat-form-field *ngSwitchCase="'dropdown'">
+      <mat-select [placeholder]="question.label" [formControl]="form.get(question.key)">
+        <mat-option *ngFor="let option of question.options" [value]="option.key">
+          {{option.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-expansion-panel *ngSwitchCase="'fieldset'" [formGroupName]="question.key" [id]="question.key" [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ question.label }}</mat-panel-title>
+        <mat-panel-description></mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-question *ngFor="let subQuestion of question.collection" [question]="subQuestion" [form]="form.get(question.key)"></app-question>
+    </mat-expansion-panel>
+
+  </ng-container>
+</div>
+
+
+<!--
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
